@@ -6,7 +6,6 @@ In this project you will be compiling together some messy real-world data, and t
 
 "The College Scorecard was released at the start of September 2015. Among colleges that predominantly grant bachelor’s degrees, did the release of the Scorecard shift student interest to high-earnings colleges relative to low-earnings ones (as proxied by Google searches for keywords associated with those colleges)?"
 
----
 
 ## The Data
 
@@ -36,7 +35,6 @@ Does that sentence provide information about the research question? Continue tha
 
 The dependent variable should be the outcome. When you “control for other variables” are those the variables you want to control for?
 
----
 ## The Report
 Make an RMarkdown file that performs your analysis and displays the results, and in which you explain your analysis.
 
