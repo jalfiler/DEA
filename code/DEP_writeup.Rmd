@@ -1,29 +1,17 @@
 ---
-title: "Data_Exploration_Project"
+title: "Data Exploration Project"
 author: "Jomaica Alfiler"
 date: "August 6, 2022"
 output:
-  word_document: default
   html_document: default
   pdf_document: default
+  word_document: default
 ---
-
-```{r}
-"DEP/code/data_cleaned.R"
-```
 
 ### Research Question:
 
 The College Scorecard was released at the start of September 2015. Among colleges that predominantly grant bachelor’s degrees, did the release of the Scorecard shift student interest to high-earnings colleges relative to low-earnings ones (as proxied by Google searches for keywords associated with those colleges)?
 
-```{r,include=FALSE}
-# Load relevant libraries
-library(tidyverse)
-library(vtable)
-library(car)
-library(jtools)
-library(huxtable)
-```
 
 #### Data Preparation:
 
@@ -33,7 +21,7 @@ Google trend data has been combined with an intermediary file containing school 
 
 Two variables were created from the index data. The first variable, "index," is a standardized index calculated using the keywords used to search for universities. The second variable, "mo index," is a monthly averaged index score for each university using the standardized index. Because index scores from Google Trends are relative, they cannot be compared to index scores from other entities. By standardizing these scores, we can compare index scores across schools.
 
-There were two dummy variables created. The first variable, "post report," is used to identify data prior to the College Scoreboard's release. 0 represents data collected prior to 01-09-2015, and 1 represents data collected after that date. The second variable, "earning status," is based on the median reported earnings for students ten years after graduation for each school. Schools with values less than the median received a 0 while schools with values equal to or greater than the median received a 1. Because of a strong right hand skew caused by high earnings at mostly medical schools, the median value was chosen.
+There were two dummy variables created. The first variable, "post report," is used to identify data prior to the College Scoreboard's release. 0 represents data collected prior to 01-09-2015, and 1 represents data collected after that date. The second variable, "earning status," is based on the median reported earnings for students ten years after graduation for each school. Schools with values less than the median received a 0 while schools with values equal to or greater than the median received a 1. Due to a strong right hand skew brought on by high wages at predominantly medical schools, the median value was chosen.
 
 #### Analysis:
 
