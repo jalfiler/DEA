@@ -119,3 +119,39 @@ desc_stats <- summary(scoredata$yr10_earnings)
 analysis_df$earning_status <- ifelse(analysis_df$yr10_earnings >= 40700, 1, 0)
 analysis_df <- analysis_df %>% mutate(earning_status = factor(earning_status))
 
+
+
+# Figures to include for the Writeup. 
+
+# Model:
+# Regression of monthly index on yr10_earnings + earning_status + post_report and name it reg.
+# monthly index = b0 + b1(earnings) + b2(earning status) + b3(scorecard release)
+reg <- lm(mo_index ~ yr10_earnings + earning_status + post_report, data = analysis_df)
+export_summs(reg)
+
+# Fig.1: plot results of effect on `yr10_earnings`.
+reg %>%
+  ggplot(aes(yr10_earnings, mo_index)) +
+  geom_point(alpha=0.5, size=2, color = 'orange') +
+  labs(y="mo_index", x="yr10_earnings")
+
+# Fig.2: plot results of effect on `earning_status`.
+reg %>%
+  ggplot(aes(earning_status,mo_index)) +
+  geom_point(alpha=0.5, size=2, color = 'blue') +
+  labs(y="mo_index", x="earning_status")
+
+# Fig.3: plot results of effect on `post_report`.
+reg %>%
+  ggplot(aes(post_report,mo_index)) +
+  geom_point(alpha=0.5, size=2, color = 'red') +
+  labs(y="mo_index", x="post_report")
+
+
+
+
+
+
+
+
+
